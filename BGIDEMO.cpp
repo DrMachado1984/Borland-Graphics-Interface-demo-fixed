@@ -17,6 +17,7 @@
 #endif
 
 #include <dos.h>
+#include <windows.h>
 #include <math.h>
 #include <conio.h>
 #include <stdio.h>
@@ -118,9 +119,10 @@ int  gprintf(int *xloc, int *yloc, char *fmt, ... );
 
 int main()
 {
-
+  FreeConsole();
   Initialize(); 		/* Set system into Graphics mode	*/
   ReportStatus();		/* Report results of the initialization */
+
 
   ColorDemo();			/* Begin actual demonstration		*/
   if( GraphDriver==EGA || GraphDriver==EGALO || GraphDriver==VGA )
